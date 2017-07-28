@@ -126,7 +126,7 @@ function getid()
 {
     $url = 'https://haoche.atzuche.com/activity/list?openid=ohryYtwcni4p1mpuw-F-fKAVAH0I';
     $host = 'haoche.atzuche.com';
-    $res = json_decode($cURLHTTPGet($url, 2, $host, true), true);
+    $res = json_decode(cURLHTTPGet($url, 2, $host, true), true);
     foreach ($res['datas'] as $key => $value) {
         if ($value['cityCode'] == 310100) {  //换成你所在城市的id
             return $value['current']['id'];
@@ -141,7 +141,7 @@ function grab()
     $url = 'https://haoche.atzuche.com/activity/join';
     $post_data = 'openid=oEc9puHjemTRUsY0tqXk72LVG-Uw&activityId='.$id.'&channel=106';
     $host = 'haoche.atzuche.com';
-    $res = json_decode($cURLHTTPPost($url, $post_data, $timeout = 2, $host, $header_append = array(), true), true);
+    $res = json_decode(cURLHTTPPost($url, $post_data, $timeout = 2, $host, $header_append = array(), true), true);
     return $res;
 }
 
